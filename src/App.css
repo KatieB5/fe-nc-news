@@ -20,6 +20,16 @@
   justify-content: center;
 }
 
+.add-comment-form {
+  background-color: rgb(228, 228, 245);
+}
+
+.add-comment-input {
+  width: 400px;
+  height: 100px;
+  margin: 10px 10px;
+}
+
 ul {
   list-style-type: none;
 }
@@ -41,6 +51,11 @@ img {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 10px 10px hotpink;
+}
+
+#comment-success-text {
+  color: rgb(3, 95, 3);
+  font-weight: bold;
 }
 
 
