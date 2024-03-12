@@ -9,3 +9,10 @@ export const getArticles = () => {
         return response.data
     })
 }
+
+export const getArticlesbyId = (article_id) => {
+    return ncNewsApi.get(`articles/${article_id}`).then((response) => {
+        console.log(response, "<< response from api")
+        return response.data
+    })
+}
