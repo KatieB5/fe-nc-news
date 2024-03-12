@@ -9,7 +9,7 @@ export const ArticleCard = ({article}) => {
                 <p>Date created: {timeSinceDate(new Date(article.created_at))}</p>
                 <p>Author: {article.author}</p>
                 <p>Topic: {article.topic}</p>
-                <Link to={`/ncnews/${article.title}`}>
+                <Link to={`/ncnews/${article.article_id}`}>
                     <h3>{article.title}</h3>
                 </Link>
                 <p>Comments: {article.comment_count}</p>
