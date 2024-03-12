@@ -12,7 +12,7 @@ export const ArticleCard = ({article}) => {
                 <Link to={`/ncnews/${article.article_id}`}>
                     <h3>{article.title}</h3>
                 </Link>
-                <p>Comments: {article.comment_count}</p>
+                <p>Number of comments: {article.comment_count}</p>
                 <p>Votes: {article.votes}</p>
                 <button>Up vote</button>
                 <button>Down vote</button>
