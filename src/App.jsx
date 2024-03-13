@@ -7,6 +7,7 @@ import { SingleArticle } from './components/SingleArticle';
 
 
 function App() {
+
   return (
     <>
       <Header/>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import {ArticleCard} from "./ArticleCard";
 import {getArticles} from "../api";
+import {Title} from './Title';
 
 export const ArticlesList = () => {
 
@@ -20,14 +21,16 @@ export const ArticlesList = () => {
     }
 
     return (
-        <section className="articles-list">
-            <h2 className="articles-list-title">Some news</h2>
-            <ul>
-                {articlesList.map((article) => {
-                    return <ArticleCard article={article} key={article.article_id}/>
-                })}
-            </ul>
-        </section>
+        <>
+            <Title/>
+            <section className="articles-list">
+                <ul>
+                    {articlesList.map((article) => {
+                        return <ArticleCard article={article} key={article.article_id}/>
+                    })}
+                </ul>
+            </section>
+        </>
     )
 
 }
