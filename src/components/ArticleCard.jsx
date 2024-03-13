@@ -41,10 +41,9 @@ export const ArticleCard = ({article}) => {
                 </li>
             </section>
                     {err ? <p>{err}</p> : null}
+            <section id="article-card-buttons">
                     <button onClick={handleArticleUpVote} id="article-up-vote-button">Up vote</button>
                     <button onClick={handleArticleDownVote} id="article-down-vote-button">Down vote</button>
-            <section id="article-card-buttons">
-
             </section>
         </article>
     )
