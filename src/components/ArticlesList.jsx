@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import {ArticleCard} from "./ArticleCard";
 import {getArticles} from "../api";
-import {Title} from './Title';
 
 export const ArticlesList = () => {
 
@@ -22,7 +21,6 @@ export const ArticlesList = () => {
 
     return (
         <>
-            <Title/>
             <section className="articles-list">
                 <ul>
                     {articlesList.map((article) => {
