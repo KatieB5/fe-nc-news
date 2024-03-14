@@ -14,6 +14,9 @@ export const Header = () => {
             <Link to={"/ncnews/users"} className="header-link">
               <p>Users</p>
             </Link>
+            <Link to={"/ncnews/topics"} className="header-link">
+              <p>Topics</p>
+            </Link>
             <p className="header-link">Login</p>
           </nav>
       </header>

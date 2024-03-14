@@ -1,8 +1,11 @@
+import {ArticleListTitle} from './ArticleListTitle';
+import {ArticlesList} from './ArticlesList';
+
 export const ArticlePage = () => {
     return (
         <>
-            <Title/>
-            <ArticleList/>
+            <ArticleListTitle/>
+            <ArticlesList/>
         </>
     )
 }

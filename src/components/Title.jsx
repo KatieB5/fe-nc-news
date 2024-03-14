@@ -1,1 +1,0 @@
-export const Title = () => <h2 className="articles-list-title">Some news</h2>
