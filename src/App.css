@@ -56,14 +56,32 @@ ul {
 }
 
 button {
-  background: #00c9a7;
-  color: white;
   padding: 0.5em 1em;
   margin: 1em 1em;
   border-radius: 10px;
   border: none;
   font-family: 'Zilla Slab', serif;
   font-size: 1rem;
+}
+
+#article-up-vote-button {
+  background:rgb(2, 95, 2);
+  color: white;
+}
+
+#article-down-vote-button {
+  background: rgb(216, 5, 40);
+  color: white;
+}
+
+.add-new-comment-submit{
+  background: #00c9a7;
+  color: white;
+}
+
+#delete-comment-button {
+  background: rgb(165, 6, 6);
+  color: white;
 }
 
 img {
