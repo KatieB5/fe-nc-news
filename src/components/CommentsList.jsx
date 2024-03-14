@@ -16,6 +16,7 @@ export const CommentsList = () => {
         body: ""
     });
     const [commentSuccess, setCommentSuccess] = useState(false);
+    const [err, setErr] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
@@ -34,15 +35,17 @@ export const CommentsList = () => {
     const handleNewCommentSubmit = (event) => {
         event.preventDefault();
         
-        
         postNewComment(newComment, article_id).then((response) => {
             setCommentsList((commentsList) => {
                 return [response, ...commentsList];
-            })
+            });
+            setErr(null);
             setCommentSuccess(true);
+            }).catch((err) => {
+                setErr("We're very sorry, there's been an error! Please try again :)");
         });
         
-        setCommentSuccess(false)
+        setCommentSuccess(false);
         setNewComment({
             username: loggedInUser.username,
             body: ""
@@ -59,12 +62,14 @@ export const CommentsList = () => {
         <section className="comments-list">
             <h3>Comments</h3>
             {commentSuccess ? <p id="comment-success-text">Your comment has been added! &#127881;</p> : null}
+            {err ? <p>{err}</p> : null}
             <form className="add-comment-form" onSubmit={handleNewCommentSubmit}>
                 <label htmlFor="new-comment_body" className="add-comment-label">
                     New comment: 
                 </label>  
                     <input
                         type="text"
+                        required
                         className="add-comment-input"
                         id="new-comment_body"
                         onChange={handleNewCommentInput}
@@ -74,7 +79,7 @@ export const CommentsList = () => {
             </form>
             <ul>
                 {commentsList.map((comment) => {
-                    return <CommentCard comment={comment} key={comment.comment_id}/>
+                    return <CommentCard comment={comment} setCommentsList={setCommentsList} key={comment.comment_id}/>
                 })}
             </ul>
         </section>
