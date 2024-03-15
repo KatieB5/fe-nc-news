@@ -27,6 +27,7 @@ export const ArticleCard = ({article}) => {
 
     return (
         <article className="article-card">
+            <Link to={`/ncnews/${article.article_id}`}>
             <section id="article-card-content">
                 <li>
                     <img src={article.article_img_url}/>
@@ -40,6 +41,7 @@ export const ArticleCard = ({article}) => {
                     <p>Votes: {articleVotes}</p>
                 </li>
             </section>
+            </Link>
                     {err ? <p>{err}</p> : null}
             <section id="article-card-buttons">
                     <button onClick={handleArticleUpVote} id="article-up-vote-button">Up vote</button>

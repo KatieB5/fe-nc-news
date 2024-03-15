@@ -36,7 +36,7 @@ export const SingleArticle = () => {
                 <h2>{singleArticle.title}</h2>
                 <p>Date created: {timeSinceDate(new Date(singleArticle.created_at))}</p>
                 <p>Author: {singleArticle.author}</p>
-                <img src={singleArticle.article_img_url}/>
+                <img src={singleArticle.article_img_url} className="single-article-image"/>
                 <p>{singleArticle.body}</p>
             </section>
             <section className="comments-list">
