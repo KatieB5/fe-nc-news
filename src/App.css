@@ -15,6 +15,7 @@
   object-fit: cover;
   border-radius: 10px;
   align-content: center;
+  display: inline-block;
 }
 
 .articles-list {
@@ -23,7 +24,8 @@
 }
 
 .add-comment-form {
-  background-color: rgb(228, 228, 245);
+  background-color: rgb(241, 204, 198);
+  border-radius: 10px;
 }
 
 .add-comment-input {
@@ -100,9 +102,14 @@
   color: white;
 }
 
+.single-article-image {
+  border-radius: 10px;
+  height: 300px;
+}
 
 ul {
   list-style-type: none;
+  padding: 0px;
 }
 
 
@@ -135,13 +142,14 @@ ul {
 }
 
 .add-new-comment-submit{
-  background: #00c9a7;
+  background: #C65B7C;
   color: white;
+  font-weight: bold;
   padding: 0.5em 1em;
   margin: 1em 1em;
-  border-radius: 10px;
+  border-radius: 5px;
   border: none;
-  font-family: 'Zilla Slab', serif;
+  font-family: "Lucida Console", "Courier New", monospace;
   font-size: 1rem;
 }
 
@@ -182,6 +190,19 @@ a {
 #comment-success-text {
   color: rgb(3, 95, 3);
   font-weight: bold;
+}
+
+.user-list-item {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  border: 3px solid #83B692;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+#user-image {
+  height: 100px;
 }
 
 

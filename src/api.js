@@ -51,3 +51,9 @@ export const getTopics = () => {
         return response.data.topicsArr;
     })
 }
+
+export const getUsers = () => {
+    return ncNewsApi.get("users").then((response) => {
+        return response.data;
+    })
+}
