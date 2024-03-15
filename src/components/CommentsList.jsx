@@ -47,7 +47,7 @@ export const CommentsList = () => {
             setCommentSuccess(true);
             })
         .catch((err) => {
-                setErr(err.response);
+            alert("Comment could not be posted :( Please try again!")
         });
         
         setCommentSuccess(false);

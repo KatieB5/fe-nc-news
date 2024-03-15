@@ -9,13 +9,13 @@ export const Header = () => {
           </div>
           <nav className="link-container">
             <Link to={"/"} className="header-link">
-              <p>Home</p>
+              <button className="nav-bar-link-button">Home</button>
             </Link>
             <Link to={"/ncnews/users"} className="header-link">
-              <p>Users</p>
+              <button className="nav-bar-link-button">Users</button>
             </Link>
             <Link to={"/ncnews/topics"} className="header-link">
-              <p>Topics</p>
+              <button className="nav-bar-link-button">Topics</button>
             </Link>
             <p className="header-link">Login</p>
           </nav>
