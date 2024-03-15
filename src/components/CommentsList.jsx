@@ -5,10 +5,11 @@ import {CommentCard} from './CommentCard';
 import { useContext } from 'react';
 import { UserContext } from '../contexts/User';
 import {postNewComment} from '../api'
+import {ErrorPage} from './ErrorPage';
 
 export const CommentsList = () => {
     const {article_id} = useParams();
-    const [commentsList, setCommentsList] = useState();
+    const [commentsList, setCommentsList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const {loggedInUser, setLoggedInUser} = useContext(UserContext);
     const [newComment, setNewComment] = useState({
@@ -23,7 +24,9 @@ export const CommentsList = () => {
         getCommentsByArticleId(article_id).then((data) => {
             setCommentsList(data)
             setIsLoading(false)
-        });
+        }).catch((err) => {
+            setErr(err.response);
+        })
     }, []);
 
     const handleNewCommentInput = () => {
@@ -35,14 +38,16 @@ export const CommentsList = () => {
     const handleNewCommentSubmit = (event) => {
         event.preventDefault();
         
-        postNewComment(newComment, article_id).then((response) => {
+        postNewComment(newComment, article_id)
+        .then((response) => {
             setCommentsList((commentsList) => {
                 return [response, ...commentsList];
             });
             setErr(null);
             setCommentSuccess(true);
-            }).catch((err) => {
-                setErr("We're very sorry, there's been an error! Please try again :)");
+            })
+        .catch((err) => {
+                setErr(err.response);
         });
         
         setCommentSuccess(false);
@@ -50,6 +55,10 @@ export const CommentsList = () => {
             username: loggedInUser.username,
             body: ""
         });
+    }
+
+    if (err) {
+        return <ErrorPage message={err.data.msg} status={err.status}/>
     }
 
     if (isLoading) {

@@ -6,7 +6,8 @@ import { ArticlePage } from './components/ArticlePage';
 import { SingleArticle } from './components/SingleArticle';
 import { TopicsList } from './components/TopicList';
 import {TopicSpecificArticlesList} from './components/TopicSpecificArticlesList';
-
+import {ErrorPage} from './components/ErrorPage'
+;
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/ncnews/:article_id" element={<SingleArticle />} />
           <Route path="/ncnews/topics" element={<TopicsList/>} />
           <Route path="/ncnews/topics/:topic" element={<TopicSpecificArticlesList/>} />
+          <Route path="*" element={<ErrorPage/>} />
         </Routes>
       <Footer/>
     </>
