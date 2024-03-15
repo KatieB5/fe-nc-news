@@ -3,16 +3,18 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .article-card {
-  background: rgb(212, 220, 245);
+  background: rgb(248, 223, 218);
   padding: 0.5em 0.5em;
   margin: 1em 1em;
   width: 20em;
   height: 35em;
   object-fit: cover;
   border-radius: 10px;
+  align-content: center;
 }
 
 .articles-list {
@@ -33,29 +35,108 @@
 .header-container {
   display: flex;
   width: 100%;
-  height: 200px;
+  height: 150px;
+  align-items: center;
+  background-color: #F0F7EE;
   justify-content: space-between;
 }
 
 .title-container {
   flex: 0 0 25%;
+  
+}
+
+.title-container h1 {
+  color: #5B3758;
+  font-weight: bold;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.title-container p {
+  color: #5B3758;
+  font-weight: bold;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding: 2% 5%;
 }
 
 .link-container {
-  flex: 0 0 75%;
+  flex: 0 0 65%;
   display: inline-flex;
   justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.header-link {
-  margin: auto;
+.link-container a {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding: 14px 16px;
+  display: block;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #ee6352;
+  cursor: pointer;
 }
+
+.topic-list-item {
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+  padding: 10px 10px;
+  margin: 20px;
+  display: inline-flex;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: #83B692;
+  cursor: pointer;
+}
+
+.topic-list-item a {
+  color: white;
+}
+
 
 ul {
   list-style-type: none;
 }
 
-button {
+
+#article-up-vote-button {
+  background:#83B692;
+  color: black;
+  padding: 0.5em 1em;
+  margin: 1em 1em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+#article-list-sort-by {
+  margin: 10px;
+}
+
+#article-down-vote-button {
+  background: #F9627D;
+  color: white;
+  padding: 0.5em 1em;
+  margin: 1em 1em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+.add-new-comment-submit{
+  background: #00c9a7;
+  color: white;
   padding: 0.5em 1em;
   margin: 1em 1em;
   border-radius: 10px;
@@ -64,37 +145,35 @@ button {
   font-size: 1rem;
 }
 
-#article-up-vote-button {
-  background:rgb(2, 95, 2);
-  color: white;
-}
-
-#article-down-vote-button {
-  background: rgb(216, 5, 40);
-  color: white;
-}
-
-.add-new-comment-submit{
-  background: #00c9a7;
-  color: white;
-}
-
 #delete-comment-button {
   background: rgb(165, 6, 6);
   color: white;
+  padding: 0.5em 1em;
+  margin: 1em 1em;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Lucida Console", "Courier New", monospace;
 }
 
-img {
+.article-card img {
   width: 10em;
   height: 10em;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 10px 10px hotpink;
+  box-shadow: 5px 5px #5B3758;
+}
+
+.article-card h3 {
+  color: #5B3758;
+  margin: 0px;
 }
 
 a {
   border: 0px;
   padding: 5px 5px;
+  margin: 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
