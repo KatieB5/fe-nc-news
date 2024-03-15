@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import {ArticleCard} from "./ArticleCard";
 import {getArticles} from "../api";
+import { ErrorPage } from "./ErrorPage";
 
 export const ArticlesList = () => {
 
@@ -8,18 +9,27 @@ export const ArticlesList = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [sortBy, setSortBy] = useState("created_at");
     const [orderBy, setOrderBy] = useState("DESC");
+    const [error, setError] = useState(null)
 
     useEffect(() => {
         setIsLoading(true);
         getArticles(null, sortBy, orderBy).then((data) => {
             setArticlesList(data);
             setIsLoading(false);
-        });
+            setError(null)
+        }).catch((err) => {
+            setError(err.response);
+        })
     }, [sortBy, orderBy]);
+
+    if (error) {
+        return <ErrorPage message={error.data.msg}/>
+    }
 
     if (isLoading) {
         return <p>Bear with us while we get some news...</p>
     }
+
 
     return (
         <>

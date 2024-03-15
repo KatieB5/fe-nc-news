@@ -1,18 +1,26 @@
 import {useState, useEffect} from 'react';
 import {getTopics} from '../api';
 import {Link} from 'react-router-dom';
+import {ErrorPage} from './ErrorPage';
 
 export const TopicsList = () => {
     const [topicsList, setTopicsList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [err, setErr] = useState(null);
 
     useEffect(() => {
         setIsLoading(true);
         getTopics().then((data) => {
             setTopicsList(data);
             setIsLoading(false);
-        });
+        }).catch((err) => {
+            setErr(err.response);
+        })
     }, []);
+
+    if (err) {
+        return <ErrorPage message={err.data.msg} status={err.status}/>
+    }
 
     if (isLoading) {
         return <p>Bear with us while we get some topics for you...</p>
