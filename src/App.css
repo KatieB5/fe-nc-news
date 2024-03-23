@@ -15,7 +15,21 @@
   object-fit: cover;
   border-radius: 10px;
   align-content: center;
-  display: inline-block;
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.article-card-content {
+  width: 100%;
+  padding-top: 15px;
+}
+
+.article-card-buttons {
+  width: 100%;
+  margin-top: auto;
 }
 
 .articles-list {
@@ -26,12 +40,18 @@
 .add-comment-form {
   background-color: rgb(241, 204, 198);
   border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 50px;
 }
 
 .add-comment-input {
   width: 400px;
   height: 100px;
   margin: 10px 10px;
+}
+
+.footer-div {
+  background-color: #F0F7EE;
 }
 
 .header-container {
@@ -100,6 +120,7 @@
 
 .topic-list-item a {
   color: white;
+  cursor: pointer;
 }
 
 .single-article-image {
@@ -110,6 +131,7 @@
 ul {
   list-style-type: none;
   padding: 0px;
+  margin: 0px;
 }
 
 
@@ -180,10 +202,10 @@ ul {
 
 a {
   border: 0px;
-  padding: 5px 5px;
   margin: 0;
   text-align: center;
   text-decoration: none;
+  cursor: pointer;
   display: inline-block;
 }
 
@@ -193,18 +215,43 @@ a {
 }
 
 .user-list-item {
-  display: inline-block;
+  display: inline-grid;
+  width: 150px;
   margin: 15px;
   padding: 10px;
   border: 3px solid #83B692;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
+  align-content: space-around;
+  justify-content: space-evenly;
+  justify-items: center;
+  align-items: start;
 }
 
 #user-image {
   height: 100px;
 }
 
+#footer-links-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.footer-link {
+  font-weight: bold;
+}
 
+.comment-card {
+  background-color: rgb(248, 232, 235);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.take-me-home-button {
+  margin: 10px;
+}
 

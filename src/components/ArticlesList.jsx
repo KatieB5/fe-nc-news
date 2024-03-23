@@ -33,7 +33,7 @@ export const ArticlesList = () => {
 
     return (
         <>
-            <section id="sort-articles-selector">
+            <section id="sort-articles-container">
                 <p>Sort articles by:</p>
                 <select
                         id="article-list-sort-by"
@@ -49,8 +49,7 @@ export const ArticlesList = () => {
                         <option value="votes">Vote count</option>
                         <option value="article_img_url">Image url</option>
                 </select>
-            </section>
-            <section id="order-by-selector">
+
                 <select
                     id="article-list-sort-by"
                     value={orderBy}
